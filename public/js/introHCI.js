@@ -36,13 +36,13 @@ function addProjectDetails(e) {
  * and apply it
  */
 function randomizeColors(e) {
-	//console.log("User clicked on color button");
+	console.log("User clicked on color button");
 	$.get("/palette/", callbackColor);
 }
 
 function callbackColor (result) {
-	var colors1 = result['colors'];
-	var colors2 = colors1['hex'];
+	var colors = result['colors']['hex'];
+	console.log(colors);
   $('body').css('background-color', colors[0]);
   $('.thumbnail').css('background-color', colors[1]);
   $('h1, h2, h3, h4, h5, h5').css('color', colors[2]);
